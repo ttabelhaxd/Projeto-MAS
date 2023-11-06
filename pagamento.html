@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Produtos Alimentares">
+    <title>ZeroWasteFood</title>
+    <link rel="icon" type="image/png" href="images/zerowastelogoround.png">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="zerowaste.css" rel="stylesheet" />
+    <link href="payment.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+        <div class="container" style="display: flex;">
+            <div class="navbar-brand">
+                <a href="logedin.html"><img src="/images/zerowastelogoround.png" height="40" /></a>
+                <a href="logedin.html" class="navbar-brand"><b>ZeroWasteFood</b></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div style="padding-top: 100px;">
+            <form>
+                <div class="row border-top">
+                    <h3>Local de entrega</h3>
+                    <div class="col-6">
+                        <label for="morada1"> Morada</label>
+                        <input type="text" id="morada1" name="morada1" value="">
+                    </div>
+                    <div class="col-2">
+                        <label for="distrito1">Distrito</label>
+                        <input type="text" id="distrito1" name="distrito1" value="">
+                    </div>
+                    <div class="col-2">
+                        <label for="cidade1"> Cidade</label>
+                        <input type="text" id="cidade1" name="cidade1" value="">
+                    </div>
+                    <div class="col-2">
+                        <label for="codigo1"> Código Postal</label>
+                        <input type="text" id="codigo1" name="códigopostal1" value="">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label>
+                            <input id="check1" class="" type="checkbox" name="sameadr"> Usar endereço de entrega
+                            predefinido
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" style="padding-right: 100px;">
+                        <h3>Dados de Fatura</h3>
+                        <div class="col-12 mb-3">
+                            <label>
+                                <input id="check2" class="" type="checkbox" name="sameadr"> Preencher com os dados
+                                associados à conta
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="firstname"> Nome</label>
+                                <input type="text" id="firstname" name="firstname">
+                            </div>
+                            <div class="col-6">
+                                <label for="surname"> Apelido</label>
+                                <input type="text" id="surname" name="surname">
+                            </div>
+                        </div>
+                        <div id="dadosEntrega" class="col-12 mb-2">
+                            <label>
+                                <input id="check3" class="" type="checkbox" name="sameadr"> Endereço de fatura é o mesmo
+                                que endereço de entrega
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label for="morada2"> Morada</label>
+                            <input type="text" id="morada2" name="morada2">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="distrito2">Distrito</label>
+                                <input type="text" id="distrito2" name="distrito2">
+                            </div>
+                            <div class="col-6">
+                                <label for="cidade2"> Cidade</label>
+                                <input type="text" id="cidade2" name="cidade2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="col-12">
+                                    <label for="codigo2"> Código Postal</label>
+                                    <input type="text" id="codigo2" name="códigopostal2">
+                                </div>
+                                <div class="col-12">
+                                    <label for="tlm"> Telemóvel</label>
+                                    <input type="text" id="tlm" name="telemovel">
+                                </div>
+                            </div>
+                            <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+                                <span style="text-justify: auto;">
+                                    (Observar preço, na secção 'Carrinho', do transporte para o local de entrega
+                                    introduzido.
+                                    O mesmo será calculado automaticamente.)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="coment">Informação adicional</label>
+                            <div class="col-12">
+                                <textarea name="comment" id="comment" cols="71" rows="5"
+                                    style="border-color: rgba(128, 128, 128, 0.468); border-radius: 3px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <h3>Pagamento</h3>
+                        <label for="">Escolher método</label>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-3">
+                                <label>
+                                    <input id="master" type="radio" name="test" value="small" checked>
+                                    <img src="images/mastercard-logo.png" alt="Option 1">
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <label>
+                                    <input id="visa" type="radio" name="test" value="small">
+                                    <img src="/images/logo-visa.svg" alt="Option 1">
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <label>
+                                    <input id="mbway" type="radio" name="test" value="small">
+                                    <img src="/images/mb-way-logo.webp" alt="Option 1">
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <label>
+                                    <input id="paypal" type="radio" name="test" value="small">
+                                    <img src="/images/paypal-logo.webp" alt="Option 1">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cartões -->
+                        <div id="cartoes" class="">
+                            <div class="row">
+                                <div class="col-8">
+                                    <label for="cname">Nome do cartão</label>
+                                    <input type="text" id="cname" name="cardname">
+                                </div>
+                                <div class="col-4"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <label for="ccnum">Número do cartão</label>
+                                    <input type="text" id="ccnum" name="cardnumber">
+                                </div>
+                                <div class="col-4"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="exp">Validade</label>
+                                            <input type="text" id="exp" name="exp">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" name="cvv">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4"></div>
+                            </div>
+                        </div>
+
+                        <!-- MbWay -->
+                        <div id="tele" class="d-none">
+                            <div class="col-8">
+                                <label for="cname">Número de telemóvel</label>
+                                <input type="text" id="tele" name="phoneNumber">
+                            </div>
+                        </div>
+
+                        <!-- PayPal -->
+                        <div id="paypaldiv" class="d-none">
+                            <div>
+                                <div class="col-8">
+                                    <label for="emailpaypal">Email</label>
+                                    <input type="text" id="emailpaypal" name="mailpaypal">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-8">
+                                    <label for="passpaypal">Palavra-Passe</label>
+                                    <input type="text" id="passpaypal" name="passpaypal">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="col-12 border" style="padding: 5px; margin-top: 65px;">
+                            <div class="container">
+                                <h4>Carrinho
+                                    <span class="price" style="color:black">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <b id="quantProdutos"></b>
+                                    </span>
+                                </h4>
+
+                                <div id="carrinho">
+
+                                </div>
+
+                                <hr>
+                                <p>Transporte <span class="price">3.00€</span></p>
+                                <hr>
+                                <strong>
+                                    <p>Total do pedido
+                                </strong> <span class="price" style="color:black"><b id="precoTotal"></b></span></p>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-danger col-3 me-2" onclick="endOrder('canceled')">Cancelar</button><button type="button" class="btn btn-primary col-8" onclick="endOrder('ended')">Finalizar a compra</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer id="footercontent" style="margin-top:50px;" class="footer-wrapper border-top">
+            <div class="container-fluid no-padding ct-modal-dialog-secondary-grey1 ct-font--opensans-book">
+                <div class="ct-container">
+                    <div class="row no-gutters footer-container ct-container--px-70">
+                        <div class="col-12 col-md-3 pl-0 footer-component-wrapper">
+                            <div class="d-flex flex-column">
+                                <span class="footer-payment-methods-title">
+                                    Métodos de pagamento aceites
+                                </span>
+                                <div class="content-asset">
+                                    <ul class="d-flex flex-row footer-payment-icons-list">
+                                        <li class="footer-icon">
+                                            <img class="master-card-icon lazyloaded" loading="lazy" alt="MasterCard"
+                                                title="Pay with MasterCard" src="/images/mastercard-logo.png"
+                                                height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="visa-card-icon" alt="Visa" loading="lazy"
+                                                src="/images/logo-visa.svg" title="Pay with Visa" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="mbway-card-icon lazyloaded" loading="lazy" alt="MBWay"
+                                                title="Pay with MBWay" src="/images/mb-way-logo.webp" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="paypal-card-icon lazyloaded" loading="lazy" alt="PayPal"
+                                                title="Pay with PayPal" src="/images/paypal-logo.webp" height="23">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Loja Online</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#" title="Go to Ajuda">Ajuda</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Política de Serviço">Política de
+                                            Serviço</a></li>
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to Política de Privacidade">Política de Privacidade</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Cookies">Política de Cookies</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Mapa do Site">Mapa do Site</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Institucional</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to ZeroWasteFood Armazens">ZeroWasteFood Armazéns</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to App ZeroWaste">App ZeroWaste</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" target="_top" title="Lojas Perto de Si">Lojas
+                                            Perto de Si</a></li>
+                                    <li class="ct-footer-link"><a href="trabalhar.html" target="_blank"
+                                            title="Go to Emprego">Encontrar Emprego</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Segurança"
+                                            target="_blank">Segurança</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-links-title"><span class="title ct-h4">Contactos</span></div>
+                            <ul class="ct-menu-list">
+                                <li class="ct-footer-link">Tel: <a href="#">222 444 666</a> </br><small>(Chamada para a
+                                        rede fixa nacional)</small></li>
+                                <li class="ct-footer-link">Email: <a href="#">example@gmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="footer-links-title"><span class="title ct-h4">Segue-nos</span>
+                                <ul class="d-flex flex-row mb-0" style="margin-top: 20px;">
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Facebook"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-facebook"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Instagram"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-instagram"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Youtube"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-youtube"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                © 2022 ZeroWasteFood, Todos os direitos reservados
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="zerowaste.js"></script>
+    <script>
+
+        $().ready(function () {
+            var utilizador = JSON.parse(localStorage.getItem("utilizadorAtivo"))
+            $("#check1").change(function () {
+                $("#check1").toggleClass("checked");
+                if ($("#check1").attr("class") == "checked") {
+                    $("#morada1").val(utilizador.endereco.morada);
+                    $("#distrito1").val(utilizador.endereco.distrito);
+                    $("#cidade1").val(utilizador.endereco.cidade);
+                    $("#codigo1").val(utilizador.endereco.codigo);
+                }
+                else {
+                    $("#morada1").val("");
+                    $("#distrito1").val("");
+                    $("#cidade1").val("");
+                    $("#codigo1").val("");
+                }
+            });
+
+            $("#check2").change(function () {
+                $("#check2").toggleClass("checked");
+                if ($("#check2").attr("class") == "checked") {
+                    $("#dadosEntrega").hide();
+                    $("#morada2").val(utilizador.endereco.morada);
+                    $("#distrito2").val(utilizador.endereco.distrito);
+                    $("#cidade2").val(utilizador.endereco.cidade);
+                    $("#codigo2").val(utilizador.endereco.codigo);
+                    $("#firstname").val(utilizador.nome);
+                    $("#surname").val(utilizador.sobrenome);
+                    $("#tlm").val(utilizador.telemovel);
+                    $("#email").val(utilizador.email);
+                }
+                else {
+                    $("#dadosEntrega").show();
+                    $("#morada2").val("");
+                    $("#distrito2").val("");
+                    $("#cidade2").val("");
+                    $("#codigo2").val("");
+                    $("#firstname").val("");
+                    $("#surname").val("");
+                    $("#tlm").val("");
+                    $("#email").val("");
+                }
+            });
+
+            $("#check3").change(function () {
+                $("#check3").toggleClass("checked");
+                if ($("#check3").attr("class") == "checked") {
+                    $("#morada2").val($("#morada1").val());
+                    $("#distrito2").val($("#distrito1").val());
+                    $("#cidade2").val($("#cidade1").val());
+                    $("#codigo2").val($("#codigo1").val());
+                }
+                else {
+                    $("#morada2").val("");
+                    $("#distrito2").val("");
+                    $("#cidade2").val("");
+                    $("#codigo2").val("");
+                }
+            });
+
+            $("#master").change(function () {
+                $("#cartoes").removeClass("d-none");
+                $("#tele").addClass("d-none");
+                $("#paypaldiv").addClass("d-none");
+            });
+
+            $("#visa").change(function () {
+                $("#cartoes").removeClass("d-none");
+                $("#tele").addClass("d-none");
+                $("#paypaldiv").addClass("d-none");
+            });
+
+            $("#mbway").change(function () {
+                $("#tele").removeClass("d-none");
+                $("#cartoes").addClass("d-none");
+                $("#paypaldiv").addClass("d-none");
+            });
+
+            $("#paypal").change(function () {
+                $("#paypaldiv").removeClass("d-none");
+                $("#cartoes").addClass("d-none");
+                $("#tele").addClass("d-none");
+
+            });
+            readyCart()
+        });
+
+        function readyCart() {
+            var carrinhoContainer = $("#carrinho")
+            console.log(carrinhoContainer)
+            var utilizador = JSON.parse(localStorage.getItem("utilizadorAtivo"))
+            var totalProdutos = 0
+            var totalPreco = 3 // preço arbitrário do 'Transporte'
+            for (var i = 0; i < utilizador.compras.length; i++) {
+                //<p>Coca-Cola 4x1 lt <span class="price">4.45€</span></p>            
+                carrinhoContainer.append("<p>" + utilizador.compras[i].quantity + "<span class='me-2'></span>" + utilizador.compras[i].name + "<span class='price'>" + parseFloat(utilizador.compras[i].price) * utilizador.compras[i].quantity + "€</span></p>")
+                totalProdutos = totalProdutos + utilizador.compras[i].quantity
+                totalPreco = totalPreco + utilizador.compras[i].price * utilizador.compras[i].quantity
+            }
+            $("#quantProdutos").text(totalProdutos);
+            $("#precoTotal").text(totalPreco.toFixed(2) + '€');
+        };
+
+
+        function endOrder(action) {
+            var utilizador = JSON.parse(localStorage.getItem("utilizadorAtivo"))
+            var compras = utilizador.compras
+            utilizador.compras = []
+            localStorage.setItem("utilizadorAtivo", JSON.stringify(utilizador))
+            if (action == "canceled") {
+                console.log(action == "lolada")
+                window.location.href = "logedin.html";
+            } else if (action == "ended") {
+                var utilizadores = JSON.parse(localStorage.getItem("utilizadores"))
+                for (var i = 0; i < utilizadores.length; i++) {
+                    if (utilizador.email == utilizadores[i].email) {
+                        var compraId = utilizadores[i].historicoCompras.length
+                        utilizadores[i].historicoCompras.push({
+                            idCompra: compraId,
+                            compras: compras,
+                            data: new Date().toLocaleDateString(),
+                            precoTotal: $("#precoTotal").text()
+                        })
+                        localStorage.setItem("utilizadores", JSON.stringify(utilizadores))
+                        localStorage.setItem("utilizadorAtivo", JSON.stringify(utilizadores[i]))
+                        break
+                    }
+                }
+                window.location.href = "concluida.html";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

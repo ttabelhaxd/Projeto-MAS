@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Produtos Alimentares">
+    <title>ZeroWasteFood</title>
+    <link rel="icon" type="image/png" href="images/zerowastelogoround.png">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="zerowaste.css" rel="stylesheet" />
+    <style>
+        .buttonEdited {
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px 0;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #0162c8, #66e7fc);
+        }
+
+        .buttonEdited:hover {
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px 0;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #c87501, #fce866);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container" style="display: flex;">
+            <div class="navbar-brand">
+                <a href="logedin.html"><img src="/images/zerowastelogoround.png" height="40" /></a>
+                <a href="logedin.html" class="navbar-brand"><b>ZeroWasteFood</b></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top:100px ;">
+        <p class="fs-2"><b>Perguntas Frequentes</b></p>
+        <hr>
+        <div class="accordion mx-auto mb-3" style="max-width :1000px" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <strong class="text-primary"> 1. </strong>&nbsp;Os vossos preços incluem taxas?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Não, apenas o preço do transporte é adicionado ao preço total.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <strong class="text-primary"> 2. </strong>&nbsp;O preço a pagar pelo transporte já está incluido
+                        no preço do produto?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Não. O preço do produto e o do transporte são independentes.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <strong class="text-primary"> 3. </strong>&nbsp; Qual o método usado para calcular o preço do
+                        transporte?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        O preço do transporte é calculado incrementando 0.10€ ao preço final da compra por quilómetro
+                        percorrido pelo estafeta. Pode observar o preço do transporte na secção 'Carrinho' no passo
+                        final da compra. O mesmo é calculado de forma automática.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <strong class="text-primary"> 4. </strong>&nbsp; O que acontece se eu não estiver no local para
+                        receber o pedido?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Nesse caso, o estafeta contacta o cliente e o pedido será redirecionado para o local onde o
+                        cliente se encontra,
+                        com o aumento, claro, do preço do transporte e consequentemente do preço total da compra.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <strong class="text-primary"> 5. </strong>&nbsp; Aceitam cancelamento do pedido com posterior
+                        reembolso?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        O cliente pode cancelar o seu pedido apenas na fase de pagamento. A partir do momento em que o
+                        pedido é registado
+                        e o dinheiro é transferido, não aceitamos reembolso.
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOtherQuestion">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#otherQuestion" aria-expanded="true" aria-controls="otherQuestion">
+                            <b>Tem mais alguma dúvida ou opinião sobre o site?</b> 
+                        </button>
+                    </h2>
+                    <div id="otherQuestion" class="accordion-collapse collapse show" aria-labelledby="otherQuestion"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form id="formsfaqs" action="" name="faqs" autocomplete="off">
+                                <div class="row form-group">
+                                    <label for="Nome" class="col-md-2 col-form-label">Name</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="Nome" id="pessoa" class="form-control btn-outline-danger" />
+                                        <div class="d-none col-form-label" style="color: lightskyblue" id="pessoaError">
+                                            <i class="fa fa-exclamation-triangle"></i> (Min: 10 letters; Max: 100
+                                            letters).
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group mt-2">
+                                    <label for="email" class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-md-10">
+                                        <input type="email" name="email" id="email" class="form-control btn-outline-danger" />
+                                        <div class="d-none col-form-label" style="color: lightskyblue" id="emailError">
+                                            <i class="fa fa-exclamation-triangle"></i> (Min: 10 letters; Max: 100
+                                            letters).
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group mt-2">
+                                    <label for="duvtipo" class="col-md-2 col-form-label text-center">Type of
+                                        question</label>
+                                    <div class="col-md-10">
+                                        <div class="form-check">
+                                            <input type="radio" name="duvtipo" class="form-check-input " value="bugs"><label
+                                                class="form-check-label">Report bugs</label><br />
+                                            <input type="radio" name="duvtipo" class="form-check-input" value="duvida"><label
+                                                class="form-check-label">Help</label><br />
+                                            <input type="radio" name="duvtipo" class="form-check-input" value="opiniao"><label
+                                                class="form-check-label">Opinion os this
+                                                site</label><br />
+                                            <input type="radio" name="duvtipo" class="form-check-input" value="outro"><label
+                                                class="form-check-label">Other</label>
+                                        </div>
+                                        <div class="d-none col-form-label" style="color: lightskyblue" id="duvtipoError"><i
+                                                class="fa fa-exclamation-triangle"></i> (Choose a type
+                                            of question).</div>
+                                    </div>
+            
+                                </div>
+                                <div class="row form-group">
+                                    <label for="duvida" class="col-md-2 col-form-label">Write</label>
+                                    <div class="col-md-10">
+                                        <textarea type="text" name="duvida" id="duvida" class="form-control btn-outline-danger"
+                                            style="min-height:80px ;"> </textarea>
+                                        <div class="d-none col-form-label" style="color: lightskyblue" id="duvidaError">
+                                            <i class="fa fa-exclamation-triangle"></i> (Min: 20 letters; Max: 200
+                                            letters).
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center form-group mt-2">
+                                    <input type="Submit" name="submitBtn" value="Submit" class="btn btn-primary" />
+                                    <input type="reset" name="resetBtn" value="Clear" class="btn btn-secondary" id='clean' />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <a type="button" class="btn btn-secondary" style="width: 200px;" href="logedin.html">Voltar</a>
+        </div>
+
+        <footer id="footercontent" style="margin-top:50px;" class="footer-wrapper border-top">
+            <div class="container-fluid no-padding ct-modal-dialog-secondary-grey1 ct-font--opensans-book">
+                <div class="ct-container">
+                    <div class="row no-gutters footer-container ct-container--px-70">
+                        <div class="col-12 col-md-3 pl-0 footer-component-wrapper">
+                            <div class="d-flex flex-column">
+                                <span class="footer-payment-methods-title">
+                                    Métodos de pagamento aceites
+                                </span>
+                                <div class="content-asset">
+                                    <ul class="d-flex flex-row footer-payment-icons-list">
+                                        <li class="footer-icon">
+                                            <img class="master-card-icon lazyloaded" loading="lazy" alt="MasterCard"
+                                                title="Pay with MasterCard" src="/images/mastercard-logo.png"
+                                                height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="visa-card-icon" alt="Visa" loading="lazy"
+                                                src="/images/logo-visa.svg" title="Pay with Visa" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="mbway-card-icon lazyloaded" loading="lazy" alt="MBWay"
+                                                title="Pay with MBWay" src="/images/mb-way-logo.webp" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="paypal-card-icon lazyloaded" loading="lazy" alt="PayPal"
+                                                title="Pay with PayPal" src="/images/paypal-logo.webp" height="23">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Loja Online</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#" title="Go to Ajuda">Ajuda</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Política de Serviço">Política de
+                                            Serviço</a></li>
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to Política de Privacidade">Política de Privacidade</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Cookies">Política de Cookies</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Mapa do Site">Mapa do Site</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Institucional</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to ZeroWasteFood Armazens">ZeroWasteFood Armazéns</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to App ZeroWaste">App ZeroWaste</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" target="_top" title="Lojas Perto de Si">Lojas
+                                            Perto de Si</a></li>
+                                    <li class="ct-footer-link"><a href="trabalhar.html" target="_blank"
+                                            title="Go to Emprego">Encontrar Emprego</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Segurança"
+                                            target="_blank">Segurança</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-links-title"><span class="title ct-h4">Contactos</span></div>
+                            <ul class="ct-menu-list">
+                                <li class="ct-footer-link">Tel: <a href="#">222 444 666</a> </br><small>(Chamada para a
+                                        rede fixa nacional)</small></li>
+                                <li class="ct-footer-link">Email: <a href="#">example@gmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="footer-links-title"><span class="title ct-h4">Segue-nos</span>
+                                <ul class="d-flex flex-row mb-0" style="margin-top: 20px;">
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Facebook"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-facebook"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Instagram"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-instagram"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Youtube"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-youtube"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                © 2022 ZeroWasteFood, Todos os direitos reservados
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="zerowaste.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#formsfaqs').submit(function (event) {
+                var retval = true
+
+                if ($("#pessoa").val().trim().length < 10 || $("#pessoa").val().trim().length > 100) {
+                    $("#pessoaError").removeClass('d-none');
+                    retval = false;
+                }
+                else {
+                    $("#pessoaError").addClass('d-none');
+                }
+                if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100) {
+                    $("#emailError").removeClass('d-none');
+                    retval = false;
+                }
+                else {
+                    $("#emailError").addClass('d-none');
+                }
+                if ($('input[name="duvtipo"]:checked').length < 1) {
+                    $("#duvtipoError").removeClass('d-none');
+                    retval = false;
+                }
+                else {
+                    $("#duvtipoError").addClass('d-none');
+                }
+                if ($("#duvida").val().trim().length < 20 || $("#duvida").val().trim().length > 200) {
+                    $("#duvidaError").removeClass('d-none');
+                    retval = false;
+                }
+                else {
+                    $("#duvidaError").addClass('d-none');
+                }
+                return retval
+            })
+            $('#clean').click(function () {
+                $("#pessoaError").addClass('d-none');
+                $("#emailError").addClass('d-none');
+                $("#duvtipoError").addClass('d-none');
+                $("#duvidaError").addClass('d-none');
+            });
+        });
+    </script>
+</body>
+
+</html>

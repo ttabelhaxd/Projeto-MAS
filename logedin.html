@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Produtos Alimentares">
+    <title>ZeroWasteFood</title>
+    <link rel="icon" type="image/png" href="images/zerowastelogoround.png">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="zerowaste.css" rel="stylesheet" />
+    <style>
+        .carousel {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel-item {
+            z-index: -100;
+            height: 450px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .carousel-item:nth-child(1) {
+            background-image: url('/images/entrega-gratis-continente.png');
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('/images/coca-cola.png');
+        }
+
+        .carousel-item:nth-child(3) {
+            background-image: url('/images/bombons-nestle.png');
+        }
+
+        .carousel-item:nth-child(4) {
+            background-image: url('/images/banner-doces.png');
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="logedin.html"><img src="/images/zerowastelogoround.png" height="40" /></a>
+                <a class="navbar-brand" href="logedin.html"><b>ZeroWasteFood</b></a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="about.html"><i
+                                class="fa fa-info-circle"></i>&nbsp Quem somos nós?</a></li>
+                </ul>
+            </div>
+            Bem vindo, <span id="userName" style="margin-left: 4px;"></span>!
+            <div style="padding-left: 20px; padding-right: 50px;">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Menu
+                    </button>
+                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="gerirconta.html">Gerir conta</a></li>
+                      <li><a class="dropdown-item" href="historico.html">Histórico de compras</a></li>
+                      <li><a class="dropdown-item" href="trabalhar.html">Procurar emprego</a></li>
+                      <li><a class="dropdown-item" href="faq.html">Ajuda</a></li>
+                      <li><a id="sair" class="dropdown-item" href="index.html">Sair</a></li>
+                    </ul>
+                  </div>
+            </div>
+
+        </div>
+        <div class="modal" id="id05" >
+            <form  class="modal-content animate" method="post">
+                <div class="container">
+                    <h1>Carrinho de compras</h1>
+                    <hr>
+                    <div id="products"></div>
+                    <hr>
+                    <div class="mb-1 mx-2 row">
+                        <div class="col-6">
+                            <b>Total</b>
+                        </div>
+                        <div class="col-6 text-end">
+                            <b><span id="total">0.00</span>€</b>
+                        </div>
+                    </div>
+                    <hr>
+                <div class="text-center">
+                    <button type="button" style="width: 200px; background-color: red; margin-right: 100px;color: white;" onclick="document.getElementById('id05').style.display='none'" class="btn">Sair</button>
+                    <a onclick="valid()" style="width: 200px" class="btn btn-primary">Realizar pedido</a>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel" style="padding-top: 50px;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <div class="fs-5"
+                        style="padding: 3px;border:solid; border-color: white; border-radius: 5px; background-color: red;">
+                        <b><b></b>APROVEITE: De 15/12 a 31/12 não paga transporte nos seus pedidos!! Não deixe escapar
+                            esta oportunidade!</b></b></div>
+                    <div style="padding-top: 100px;" class="display-3">ENTREGAS EM TODO O LADO</div>
+                    <p class="fs-3">Encomende e receba onde quiser!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <div class="fs-5"
+                        style="padding: 3px;border:solid; border-color: white; border-radius: 5px; background-color: red;">
+                        <b>APROVEITE: De 15/12 a 31/12 não paga transporte nos seus pedidos!! Não deixe escapar esta
+                            oportunidade!</b></div>
+                    <div style="padding-top: 100px;" class="display-3">COCA-COLA</div>
+                    <p class="fs-3">Disfrute do sabor da Coca-Cola em sua casa</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <div class="fs-5"
+                        style="padding: 3px;border:solid; border-color: white; border-radius: 5px; background-color: red;">
+                        <b>APROVEITE: De 15/12 a 31/12 não paga transporte nos seus pedidos!! Não deixe escapar esta
+                            oportunidade!</b></div>
+                    <div style="padding-top: 100px;" class="display-3">BOMBONS NESTLÉ</div>
+                    <p class="fs-3">Agora disponíveis na nossa loja</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <div class="fs-5"
+                        style="padding: 3px;border:solid; border-color: white; border-radius: 5px; background-color: red;">
+                        <b>APROVEITE: De 15/12 a 31/12 não paga transporte nos seus pedidos!! Não deixe escapar esta
+                            oportunidade!</b></div>
+                    <div style="padding-top: 100px;" class="display-3">DOCES PARA TODOS</div>
+                    <p class="fs-3">Dê uma olhada na nossa grande variedade de doces</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-2 ms-5 me-0">
+                            <div onclick="search()" id="procurar" class="btn btn-secondary"><i class="fa fa-search"></i></div>
+                        </div>
+                        <div class="border rounded row col-8">
+                            <div class="col-12"><input id="search" style="height: 20px;" type="text" class="border-0" placeholder="Procurar produtos"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-1"><span class="form-control" id="quantidades"
+                                title="Quantidade total de produtos">0</span>
+                        </div>
+                        <div class="col-4"><i class="fa fa-shopping-cart fa-2x px-3" aria-hidden="true"></i><a type="button" onclick="document.getElementById('id05').style.display='block'"><u>Ver
+                            Carrinho</u></a>
+                        </div>
+                        <div class="col-4"><span class="form-control" id="total1"
+                                title="Preço total da compra">0.00</span>
+                        </div>
+                        <div class="col-3">
+                            <a onclick="valid()" class="btn btn-primary">Comprar</a>
+                            <button type="button" onclick="clean()" class="btn btn-secondary" title="Limpar carrinho"><i
+                                    class="fa fa-trash-o"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <h1 class="border-bottom my-3 py-3">Produtos Mais Procurados</h1>
+            <div class="row text-center">
+                <div class="col-sm-4" id="cola">
+                    <div class=""><img src="/images/cola-4x-1L.jpg" style="height: 300px;width: 300px;" /></div>
+                    <input type="hidden" id="qty1" name="qty1" value="0" />
+                    <small>Mercadona</small>
+                    <h5>Coca-Cola 4x1 lt</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price1" name="Coca-Cola 4x1 lt" value="4.55"
+                            class="text-danger text-right border-0" readonly> 4.45€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(1); addCart(1)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-sm-4" id="bombons">
+                    <div class=""><img src="/images/bombons-caixa-nestle.jpg" style="height: 300px;width: 300px;" /></div>
+                    <input type="hidden" id="qty2" name="qty2" value="0" />
+                    <small>Lidl</small>
+                    <h5>Bombons Caja Roja 400g</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price2" name="Bombons Caja Roja 400g" value="6.99"
+                            class="text-danger text-right border-0" readonly> 6.99€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(2); addCart(2)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-sm-4" id="bolo">
+                    <div class=""><img src="/images/bolo-rei.jpg" style="height: 300px;width: 300px;" /></div>
+                    <input type="hidden" id="qty3" name="qty3" value="0" />
+                    <small>Continente</small>
+                    <h5>Bolo Rei 1kg</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price3" name="Bolo Rei 1kg" value="9.99"
+                            class="text-danger text-right border-0" readonly> 9.99€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(3); addCart(3)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <div class="row text-center mt-5">
+                <div class="col-sm-4" id="pao">
+                    <div class=""><img src="/images/pao.jpg" style="height: 350px;width: 350px;" /></div>
+                    <input type="hidden" id="qty4" name="qty4" value="0" />
+                    <small>Pingo Doce</small>
+                    <h5>Pão 150g</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price4" name="Pão 150g" value="0.30"
+                            class="text-danger text-right border-0" readonly> 0.30€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(4);addCart(4)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-sm-4" id="cenoura">
+                    <div class=""><img src="/images/cvenoura.jpg" style="height: 350px;width: 350px;" /></div>
+                    <input type="hidden" id="qty5" name="qty5" value="0" />
+                    <small>Continente</small>
+                    <h5>Cenoura 1kg</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price5" name="Cenoura 1kg" value="1.00"
+                            class="text-danger text-right border-0" readonly> 1.00€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(5);addCart(5)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-sm-4" id="cebolas">
+                    <div class=""><img src="/images/cebolas.jpg" style="height: 350px;width: 350px;" /></div>
+                    <input type="hidden" id="qty6" name="qty6" value="0" />
+                    <small>Mercadona</small>
+                    <h5>Cebolas 1kg</h5>
+                    <div class="text-danger text-right"><input type="hidden" id="price6" name="Cebola 1kg" value="1.20"
+                            class="text-danger text-right border-0" readonly> 1.20€</div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="this.blur(); addProduct(6); addCart(6)">
+                        Adicionar ao meu carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+        <footer id="footercontent" style="margin-top:150px;" class="footer-wrapper border-top">
+            <div class="container-fluid no-padding ct-modal-dialog-secondary-grey1 ct-font--opensans-book">
+                <div class="ct-container">
+                    <div class="row no-gutters footer-container ct-container--px-70">
+                        <div class="col-12 col-md-3 pl-0 footer-component-wrapper">
+                            <div class="d-flex flex-column">
+                                <span class="footer-payment-methods-title">
+                                    Métodos de pagamento aceites
+                                </span>
+                                <div class="content-asset">
+                                    <ul class="d-flex flex-row footer-payment-icons-list">
+                                        <li class="footer-icon">
+                                            <img class="master-card-icon lazyloaded" loading="lazy" alt="MasterCard"
+                                                title="Pay with MasterCard" src="/images/mastercard-logo.png"
+                                                height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="visa-card-icon" alt="Visa" loading="lazy"
+                                                src="/images/logo-visa.svg" title="Pay with Visa" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="mbway-card-icon lazyloaded" loading="lazy" alt="MBWay"
+                                                title="Pay with MBWay" src="/images/mb-way-logo.webp" height="23">
+                                        </li>
+                                        <li class="footer-icon">
+                                            <img class="paypal-card-icon lazyloaded" loading="lazy" alt="PayPal"
+                                                title="Pay with PayPal" src="/images/paypal-logo.webp" height="23">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Loja Online</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#" title="Go to Ajuda">Ajuda</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Política de Serviço">Política de
+                                            Serviço</a></li>
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to Política de Privacidade">Política de Privacidade</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Cookies">Política de Cookies</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to Mapa do Site">Mapa do Site</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="content-asset">
+                                <div class="footer-links-title"><span class="title ct-h4">Institucional</span></div>
+                                <ul class="ct-menu-list">
+                                    <li class="ct-footer-link"><a href="#"
+                                            title="Go to ZeroWasteFood Armazens">ZeroWasteFood Armazéns</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Go to App ZeroWaste">App ZeroWaste</a>
+                                    </li>
+                                    <li class="ct-footer-link"><a href="#" target="_top" title="Lojas Perto de Si">Lojas
+                                            Perto de Si</a></li>
+                                    <li class="ct-footer-link"><a href="trabalhar.html" target="_blank"
+                                            title="Go to Emprego">Encontrar Emprego</a></li>
+                                    <li class="ct-footer-link"><a href="#" title="Segurança"
+                                            target="_blank">Segurança</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="footer-links-title"><span class="title ct-h4">Contactos</span></div>
+                            <ul class="ct-menu-list">
+                                <li class="ct-footer-link">Tel: <a href="#">222 444 666</a> </br><small>(Chamada para a
+                                        rede fixa nacional)</small></li>
+                                <li class="ct-footer-link">Email: <a href="#">example@gmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <div class="footer-links-title"><span class="title ct-h4">Segue-nos</span>
+                                <ul class="d-flex flex-row mb-0" style="margin-top: 20px;">
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Facebook"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-facebook"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Instagram"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-instagram"></span></a>
+                                    </li>
+                                    <li class="footer-social-icon">
+                                        <a href="#" target="_blank" rel="noopener"
+                                            class="ct-tooltip-trigger footer-social-icon--link" aria-label="Youtube"
+                                            data-toggle="tooltip" data-placement="right" title=""><span
+                                                class="d-inline-block svgbg-icon-youtube"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                © 2022 ZeroWasteFood, Todos os direitos reservados
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="zerowaste.js"></script>
+    <script>
+        $().ready(function() {
+            $("#userName").text(JSON.parse(localStorage.getItem("utilizadorAtivo")).nome);
+            $("#sair").click(function() {
+                localStorage.setItem("utilizadorAtivo", "");
+            });
+        });
+    </script>
+</body>
+
+</html>
